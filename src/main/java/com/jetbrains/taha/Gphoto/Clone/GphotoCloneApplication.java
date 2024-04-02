@@ -8,6 +8,10 @@ public class GphotoCloneApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GphotoCloneApplication.class, args);
+
+//		var context = SpringApplication.run(GphotoCloneApplication.class, args);
+//		Cat cat = context.getBean(Cat.class);
+//		cat.sound();
 	}
 
 }

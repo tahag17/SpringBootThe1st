@@ -29,4 +29,5 @@ public class CatController {
     public List<Cat> getAllCats() {
         return this.catService.getAllCats();
     }
+
 }

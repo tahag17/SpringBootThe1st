@@ -12,6 +12,10 @@ public class Cat {
     private String name;
     private int age;
 
+    public String sound() {
+        return "Meoww";
+    }
+
     public Cat() {
     }
 

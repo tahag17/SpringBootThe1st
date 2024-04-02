@@ -24,7 +24,7 @@ public class CatService {
 
 
         for (Cat cat : cats) {
-            if (cat.getName().equals(name)) {
+            if (cat.getName().equalsIgnoreCase(name)) {
                 return cat;
             }
         }
