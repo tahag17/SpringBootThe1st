@@ -1,10 +1,10 @@
-package com.jetbrains.taha.Gphoto.Clone;
+package com.jetbrains.taha.Gphoto.Clone.Controllers;
 
+import com.jetbrains.taha.Gphoto.Clone.Cat;
+import com.jetbrains.taha.Gphoto.Clone.Services.CatService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;

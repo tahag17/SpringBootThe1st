@@ -1,4 +1,4 @@
-package com.jetbrains.taha.Gphoto.Clone;
+package com.jetbrains.taha.Gphoto.Clone.Controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

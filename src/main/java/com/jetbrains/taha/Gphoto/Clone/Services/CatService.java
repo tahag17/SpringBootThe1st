@@ -1,10 +1,11 @@
-package com.jetbrains.taha.Gphoto.Clone;
+package com.jetbrains.taha.Gphoto.Clone.Services;
 
+import com.jetbrains.taha.Gphoto.Clone.Cat;
+import com.jetbrains.taha.Gphoto.Clone.Repositories.CatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CatService {
