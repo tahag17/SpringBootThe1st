@@ -1,16 +1,13 @@
-package com.jetbrains.taha.Gphoto.Clone.Services;
+package com.jetbrains.taha.Gphoto.Clone.cat;
 
-import com.jetbrains.taha.Gphoto.Clone.Cat;
-import com.jetbrains.taha.Gphoto.Clone.Repositories.CatRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class CatService {
-    @Autowired
-    private CatRepository catRepository;
+    private final CatRepository catRepository;
+    public CatService(CatRepository catRepository){this.catRepository = catRepository;}
 
     public Cat getCatByID(int id) {
         if (this.catRepository.findById(id).isPresent()) {
@@ -36,5 +33,8 @@ public class CatService {
     public List<Cat> getAllCats() {
         return (List<Cat>) this.catRepository.findAll();
     }
+
+    //POST STUFF
+    void saveCat(Cat cat) {catRepository.save(cat);}
 
 }

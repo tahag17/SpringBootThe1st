@@ -1,4 +1,4 @@
-package com.jetbrains.taha.Gphoto.Clone;
+package com.jetbrains.taha.Gphoto.Clone.dog;
 
 import org.springframework.stereotype.Component;
 

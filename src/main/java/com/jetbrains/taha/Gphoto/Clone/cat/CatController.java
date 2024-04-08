@@ -1,19 +1,20 @@
-package com.jetbrains.taha.Gphoto.Clone.Controllers;
+package com.jetbrains.taha.Gphoto.Clone.cat;
 
-import com.jetbrains.taha.Gphoto.Clone.Cat;
-import com.jetbrains.taha.Gphoto.Clone.Services.CatService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/cats")
 public class CatController {
-    @Autowired
-    private CatService catService;
 
+    private final CatService catService;
+
+    public CatController(CatService catService) {
+        this.catService = catService;
+    }
+//GET STUFF
     @GetMapping("/id/{id}")
     public Cat getCatById(@PathVariable int id) {
         return this.catService.getCatByID(id);
@@ -25,9 +26,16 @@ public class CatController {
     }
 
     // get all cats
-    @GetMapping("/cats")
+    @GetMapping
     public List<Cat> getAllCats() {
         return this.catService.getAllCats();
+    }
+
+
+//POST STUFF
+    @PostMapping("/create")
+    public void saveCat(@RequestBody Cat cat) {
+        catService.saveCat(cat);
     }
 
 }

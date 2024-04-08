@@ -1,20 +1,20 @@
-package com.jetbrains.taha.Gphoto.Clone;
+package com.jetbrains.taha.Gphoto.Clone.cat;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 import org.springframework.stereotype.Component;
 
 @Component
-@Table("CATS")
+@Table("cats")
 public class Cat {
     @Id
     private int id;
     private String name;
     private int age;
 
-    public String sound() {
-        return "Meoww";
-    }
+//    public String noise() {
+//        return name+"'s Meoww, kind of noise";
+//    }
 
     public Cat() {
     }

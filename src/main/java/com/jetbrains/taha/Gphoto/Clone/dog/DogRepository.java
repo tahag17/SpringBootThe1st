@@ -1,6 +1,5 @@
-package com.jetbrains.taha.Gphoto.Clone.Repositories;
+package com.jetbrains.taha.Gphoto.Clone.dog;
 
-import com.jetbrains.taha.Gphoto.Clone.Dog;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
