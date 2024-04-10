@@ -1,9 +1,16 @@
+version: '3.8'  # Use a compatible version (check your Docker version)
+
 services:
   postgres:
-    image: 'postgres:latest'
+    image: postgres:latest
     environment:
-      - 'POSTGRES_DB=cat'
-      - 'POSTGRES_PASSWORD=password'
-      - 'POSTGRES_USER=user'
+      POSTGRES_DB: cat
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: user
     ports:
-      - '5432:5432'
+      - 5432:5432
+
+  redis:
+    image: redis:alpine
+    ports:
+      - 6379:6379

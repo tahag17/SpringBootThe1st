@@ -3,6 +3,7 @@ package com.jetbrains.taha.Gphoto.Clone.cat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -17,7 +18,7 @@ public class CatController {
 
     //GET STUFF
     @GetMapping("/id/{id}")
-    public Cat getCatById(@PathVariable int id) {
+    public Cat getCatById(@PathVariable int id, Principal principal) {
         return this.catService.getCatByID(id);
     }
 
