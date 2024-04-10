@@ -14,7 +14,8 @@ public class CatController {
     public CatController(CatService catService) {
         this.catService = catService;
     }
-//GET STUFF
+
+    //GET STUFF
     @GetMapping("/id/{id}")
     public Cat getCatById(@PathVariable int id) {
         return this.catService.getCatByID(id);
@@ -31,11 +32,40 @@ public class CatController {
         return this.catService.getAllCats();
     }
 
+    //get cats by age
+    @GetMapping("/{age}")
+    public List<Cat> getCatByAge(@PathVariable int age) {
+        return this.catService.getCatByAge(age);
+    }
 
-//POST STUFF
+    //POST STUFF
     @PostMapping("/create")
     public void saveCat(@RequestBody Cat cat) {
         catService.saveCat(cat);
     }
+
+    @PostMapping("/createList")
+    public void saveListOfCats(@RequestBody List<Cat> cats) {
+        catService.saveListOfCats(cats);
+    }
+
+
+    //PUT STUFF
+    @PutMapping("/modify")
+    public void updateCat(@RequestBody Cat cat) {
+        catService.UpdateCat(cat);
+    }
+
+
+    //DELETE STUFF
+    @DeleteMapping("/{id}")
+    public void deleteCatById(@PathVariable int id) {
+        catService.deleteCatById(id);
+    }
+    @DeleteMapping("/delete")
+    public void deleteCat(@RequestBody Cat cat) {catService.deleteCat(cat);}
+    //delete all cats by id
+    @DeleteMapping("/deleteList")
+    public void deleteAllByIds(@RequestBody List<Integer> ids) {catService.deleteAllByIds(ids);}
 
 }
